@@ -1,171 +1,497 @@
 <!doctype html>
-<html lang="en">
+<html lang="id" class="no-js">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Raihan Winahyu — CEO Enggi Group, fokus mengembangkan Enggi Pool, dan pegiat fitness.">
-    <meta name="theme-color" content="#08080d">
-    <title>Raihan Winahyu | CEO Enggi Group &amp; GYMBRO</title>
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Raihan Winahyu — CEO Enggi Group</title>
+    <meta name="description" content="Raihan Winahyu, CEO Enggi Group dari Tangerang. Membesarkan Enggi Pool, melatih biliar, dan menjaga disiplin lewat gym.">
+    <meta name="theme-color" content="#110e0b">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Raihan Winahyu — CEO Enggi Group">
+    <meta property="og:description" content="Siang urus bisnis. Malam pegang stik. Pagi di bawah barbel.">
+    <meta property="og:image" content="assets/img/opt/raihan-enggi-pool.webp">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="assets/img/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700..900&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Schibsted+Grotesk:wght@400..700&display=swap">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Raihan Winahyu",
+        "jobTitle": "Chief Executive Officer",
+        "worksFor": { "@type": "Organization", "name": "Enggi Group" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Tangerang", "addressRegion": "Banten", "addressCountry": "ID" },
+        "email": "mailto:raihanwinahyu@gmail.com",
+        "sameAs": ["https://www.linkedin.com/in/raihanwinahyu"]
+      }
+    </script>
+    <script src="assets/js/core.js" defer></script>
+    <script src="assets/js/table.js" defer></script>
     <script src="assets/js/main.js" defer></script>
   </head>
   <body>
-    <header class="header" id="header">
-      <nav class="nav container" aria-label="Main navigation">
-        <a class="nav__logo" href="#home">Raihan<span>.</span></a>
-        <button class="nav__toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
-          <span></span><span></span>
-        </button>
-        <div class="nav__menu" id="nav-menu">
-          <a class="nav__link" href="#about">About</a>
-          <a class="nav__link" href="#projects">Projects</a>
-          <a class="nav__link" href="#work">Experience</a>
-          <a class="nav__link" href="#services">Services</a>
-          <a class="nav__link nav__link--contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+    <a class="skip" href="#profil">Langsung ke konten</a>
+
+    <header class="site-header" data-header>
+      <div class="site-header__inner wrap">
+        <a class="brand" href="#top">
+          <span class="ball ball--brand" data-n="R" aria-hidden="true"></span>
+          <span class="brand__name">Raihan Winahyu</span>
+        </a>
+
+        <nav class="nav" id="nav" aria-label="Navigasi utama">
+          <ul class="nav__list">
+            <li><a href="#profil"><i class="dot" style="--c: var(--b1)"></i>Profil</a></li>
+            <li><a href="#kerja"><i class="dot" style="--c: var(--b2)"></i>Kerja</a></li>
+            <li><a href="#jejak"><i class="dot" style="--c: var(--b3)"></i>Jejak</a></li>
+            <li><a href="#hobi"><i class="dot" style="--c: var(--b4)"></i>Hobi</a></li>
+            <li><a href="#kontak"><i class="dot" style="--c: var(--b5)"></i>Kontak</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-header__tools">
+          <button class="icon-btn" type="button" data-sound-toggle aria-pressed="true">
+            <svg class="icon-btn__on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.2L12 5.6v12.8l-4.8-3.9H4z" fill="currentColor"/><path d="M15.5 8.6a4.6 4.6 0 0 1 0 6.8M18 6.2a8 8 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <svg class="icon-btn__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.2L12 5.6v12.8l-4.8-3.9H4z" fill="currentColor"/><path d="m16 9.5 5 5m0-5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            <span class="sr-only">Suara efek</span>
+          </button>
+          <a class="btn btn--sm site-header__cta" href="#kontak">Ajak sparring</a>
+          <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-controls="nav">
+            <span class="menu-btn__lines" aria-hidden="true"></span>
+            <span class="menu-btn__label">Menu</span>
+          </button>
         </div>
-      </nav>
+      </div>
     </header>
 
-    <main class="main">
-      <section class="home section" id="home">
-        <div class="home__container container">
-          <div class="home__content">
-            <p class="home__eyebrow"><span class="status-dot"></span> Available for select projects</p>
-            <p class="home__greeting">Halo, saya</p>
-            <h1 class="home__name">Raihan<br><span>Winahyu</span></h1>
-            <div class="home__role"><span>CEO of Enggi Group</span><span>GYMBRO</span></div>
-            <p class="home__description">CEO di Enggi Group dan pegiat fitness. Saya memimpin pengembangan Enggi Pool serta menjaga fokus dan disiplin melalui latihan gym.</p>
-            <div class="home__actions">
-              <a class="button" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
-              <a class="text-link" href="assets/pdf/Raihan CV.pdf" target="_blank" rel="noreferrer">View résumé <span aria-hidden="true">↗</span></a>
-            </div>
-            <div class="home__social" aria-label="Social links">
-              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-              <a href="https://dribbble.com/" target="_blank" rel="noreferrer">Dribbble</a>
+    <main id="top">
+      <!-- HERO — a playable table -->
+      <section class="hero" data-hero aria-labelledby="hero-name">
+        <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
+
+        <div class="hero__meta wrap-table">
+          <span>CEO, Enggi Group</span>
+          <span>Tangerang, Banten</span>
+        </div>
+
+        <div class="table" data-table tabindex="0" role="application" aria-roledescription="meja biliar" aria-label="Meja biliar interaktif. Tarik ke belakang dari bola putih lalu lepas untuk memukul. Dengan keyboard: panah kiri dan kanan untuk membidik, atas dan bawah untuk tenaga, spasi untuk memukul." aria-describedby="table-hint">
+          <span class="table__diamonds" data-diamonds aria-hidden="true"></span>
+          <div class="table__cushion">
+            <div class="table__felt" data-felt>
+              <h1 class="table__name" id="hero-name"><span>Raihan</span> <span>Winahyu</span></h1>
             </div>
           </div>
-          <div class="home__visual">
-            <div class="home__image-wrap">
-              <img class="home__image" src="assets/img/home-perfil.png" alt="Foto profil Raihan Winahyu">
-            </div>
-            <div class="home__image-note"><span>Based in Tangerang, Indonesia</span><span>✳</span></div>
-            <span class="home__orbit" aria-hidden="true">DESIGN · CODE · CREATE ·</span>
-          </div>
-          <a class="home__scroll" href="#about"><span>Scroll to discover</span><span aria-hidden="true">↓</span></a>
         </div>
-      </section>
 
-      <section class="about section" id="about">
-        <div class="container about__container">
-          <div class="about__visual">
-            <img src="assets/img/about-perfil.png" alt="Raihan Winahyu" loading="lazy">
-            <span class="about__badge">Curiosity<br>drives me <span aria-hidden="true">✳</span></span>
+        <div class="table-bar wrap-table">
+          <div class="tray" aria-label="Bola yang sudah masuk">
+            <ol class="tray__slots" data-tray>
+              <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </ol>
+            <p class="tray__count"><span data-count>0</span>/9 masuk</p>
           </div>
-          <div class="about__content">
-            <p class="section__eyebrow">A little about me</p>
-            <h2 class="section__title">Bisnis, disiplin,<br><span>dan kebugaran.</span></h2>
-            <p class="about__description">Halo, saya Raihan. Sebagai CEO Enggi Group, fokus utama saya adalah memimpin dan mengembangkan Enggi Pool sebagai destinasi billiard modern pilihan. Di luar bisnis, gym adalah tempat saya melatih fokus serta disiplin harian untuk menjaga konsistensi dalam memimpin.</p>
-            <a class="text-link" href="assets/pdf/Raihan CV.pdf" target="_blank" rel="noreferrer">More about my journey <span aria-hidden="true">↗</span></a>
+          <p class="table-bar__hint" id="table-hint" data-hint>Tarik ke belakang dari bola putih, lalu lepas.</p>
+          <div class="table-bar__actions">
+            <button class="btn btn--ghost btn--sm" type="button" data-break>Break</button>
+            <button class="btn btn--ghost btn--sm" type="button" data-rerack>Susun ulang</button>
           </div>
         </div>
-      </section>
 
-      <section class="projects section" id="projects">
-        <div class="container">
-          <div class="section__heading">
-            <div><p class="section__eyebrow">Selected work · 2020—2025</p><h2 class="section__title">My Lifestyle<br><span>&amp; Passions.</span></h2></div>
-            <p class="section__intro">Kumpulan rutinitas olahraga dan hobi yang menjaga fokus serta energi saya setiap hari.</p>
-          </div>
-          <div class="projects__grid">
-            <article class="project-card">
-              <a class="project-card__image" href="#contact" aria-label="Enggi Pool &amp; Billiard"><img src="assets/img/projects-1.png" alt="Enggi Pool &amp; Billiard" loading="lazy"><span>↗</span></a>
-              <div class="project-card__meta"><span>01 / Pool</span><span>2025</span></div><h3>Enggi Pool<br>&amp; Billiard</h3><p>Cue Sports · Community · Strategy</p>
-            </article>
-            <article class="project-card">
-              <a class="project-card__image" href="#contact" aria-label="Gym and Progressive Overload"><img src="assets/img/projects-2.png" alt="Gym and strength training" loading="lazy"><span>↗</span></a>
-              <div class="project-card__meta"><span>02 / Fitness</span><span>2024</span></div><h3>Gym &amp; Progressive<br>Overload</h3><p>Strength Training · Consistency · Lifestyle</p>
-            </article>
-            <article class="project-card">
-              <a class="project-card__image" href="#contact" aria-label="Basketball"><img src="assets/img/projects-3.png" alt="Basketball and team sports" loading="lazy"><span>↗</span></a>
-              <div class="project-card__meta"><span>03 / Sports</span><span>2024</span></div><h3>Basketball</h3><p>Teamplay · Cardio · Agility</p>
-            </article>
-            <article class="project-card">
-              <a class="project-card__image" href="#contact" aria-label="Boxing and Combat Training"><img src="assets/img/projects-4.png" alt="Boxing and combat training" loading="lazy"><span>↗</span></a>
-              <div class="project-card__meta"><span>04 / Combat</span><span>2023</span></div><h3>Boxing &amp; Combat<br>Training</h3><p>Discipline · Grit · Mental Toughness</p>
-            </article>
-            <article class="project-card project-card--wide">
-              <a class="project-card__image" href="#contact" aria-label="Hiking Mountain"><img src="assets/img/projects-5.png" alt="Mountain hiking adventure" loading="lazy"><span>↗</span></a>
-              <div class="project-card__meta"><span>05 / Adventure</span><span>2023</span></div><h3>Hiking Mountain</h3><p>Endurance · Nature · Exploration</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="work section" id="work">
-        <div class="container">
-          <div class="section__heading">
-            <div><p class="section__eyebrow">The path so far</p><h2 class="section__title"><span>Experience</span><br>&amp; education.</h2></div>
-            <div class="work__tabs" role="tablist" aria-label="Work history">
-              <button class="work__tab is-active" id="experience-tab" type="button" role="tab" aria-selected="true" aria-controls="experience-panel" data-panel="experience-panel">Experience</button>
-              <button class="work__tab" id="education-tab" type="button" role="tab" aria-selected="false" aria-controls="education-panel" data-panel="education-panel">Education</button>
+        <div class="hero__intro wrap-table">
+          <p class="hero__lede" data-reveal><span><em>Siang</em> urus bisnis.</span> <span><em>Malam</em> pegang stik.</span> <span><em>Pagi</em> di bawah barbel.</span></p>
+          <div class="hero__body" data-reveal style="--d: 1">
+            <p>Saya Raihan, CEO Enggi Group dari Tangerang. Fokus saya sekarang: membesarkan Enggi Pool jadi tempat main biliar modern yang jadi pilihan — dan menjaga disiplin lewat gym supaya konsisten saat memimpin.</p>
+            <div class="hero__ctas">
+              <a class="btn" href="#profil">Kenalan dulu <span aria-hidden="true">↓</span></a>
+              <a class="link" href="assets/pdf/Raihan%20CV.pdf" target="_blank" rel="noopener">Buka CV (PDF)</a>
             </div>
           </div>
-          <div class="work__panel" id="experience-panel" role="tabpanel" aria-labelledby="experience-tab">
-            <article class="timeline-item"><span class="timeline-item__year">2022 — Now</span><div><h3>Chief Executive Officer (CEO)</h3><p>Enggi Group · Executive Leader</p></div><span class="timeline-item__number">01</span></article>
-            <article class="timeline-item"><span class="timeline-item__year">2020 — 2022</span><div><h3>Founder &amp; Managing Director</h3><p>Enggi Pool · Venue Operation</p></div><span class="timeline-item__number">02</span></article>
-            <article class="timeline-item"><span class="timeline-item__year">2020 — 2022</span><div><h3>Business Development &amp; Operations</h3><p>Murthado Company · Venture Growth</p></div><span class="timeline-item__number">03</span></article>
-          </div>
-          <div class="work__panel" id="education-panel" role="tabpanel" aria-labelledby="education-tab" hidden>
-            <article class="timeline-item"><span class="timeline-item__year">2026</span><div><h3>SMA Yuppentek 1</h3><p>Senior High School · Final</p></div><span class="timeline-item__number">01</span></article>
-            <article class="timeline-item"><span class="timeline-item__year">2024</span><div><h3>SMP Al-Darul Mustafa</h3><p>Junior High School · Graduation</p></div><span class="timeline-item__number">02</span></article>
-            <article class="timeline-item"><span class="timeline-item__year">2021</span><div><h3>SD Yayasan Enggi</h3><p>Elementary School · Graduation</p></div><span class="timeline-item__number">03</span></article>
+        </div>
+      </section>
+
+      <!-- 1. PROFIL -->
+      <section class="section paper" id="profil" aria-labelledby="profil-title">
+        <div class="wrap profil">
+          <figure class="duo" data-duo data-reveal>
+            <div class="duo__stage">
+              <img class="duo__img duo__img--a" src="assets/img/opt/raihan-formal.webp" width="960" height="1225" alt="Raihan Winahyu memakai jas hitam dan dasi" loading="lazy" decoding="async">
+              <div class="duo__clip">
+                <img class="duo__img duo__img--b" src="assets/img/opt/raihan-enggi-pool.webp" width="1600" height="1184" alt="Raihan tersenyum sambil memegang stik biliar di Enggi Pool" loading="lazy" decoding="async">
+              </div>
+              <span class="duo__tag duo__tag--a" aria-hidden="true">Meja rapat</span>
+              <span class="duo__tag duo__tag--b" aria-hidden="true">Meja biliar</span>
+              <div class="duo__handle" aria-hidden="true"><span></span></div>
+              <input class="duo__range" type="range" min="0" max="100" value="50" aria-label="Geser untuk membandingkan foto Raihan di meja rapat dan di meja biliar">
+            </div>
+            <figcaption class="duo__caption">Geser untuk ganti meja.</figcaption>
+          </figure>
+
+          <div class="profil__text">
+            <p class="kicker" data-reveal><span class="ball" data-n="1" style="--c: var(--b1)"></span>Profil</p>
+            <h2 class="display" id="profil-title" data-reveal>Dua meja. Satu kebiasaan.</h2>
+            <div class="prose" data-reveal style="--d: 1">
+              <p>Di meja rapat, saya pegang arah Enggi Group: tim, operasional, dan rencana ekspansi. Di meja biliar, pelajarannya sama dengan bahasa lain — baca posisi, hitung dua-tiga langkah ke depan, dan tetap tenang waktu giliran sendiri.</p>
+              <p>Gym yang menjaga keduanya tetap tajam. Di sana saya melatih fokus dan disiplin harian, supaya konsisten saat memimpin.</p>
+            </div>
+            <dl class="facts" data-reveal style="--d: 2">
+              <div><dt>Peran</dt><dd>CEO, Enggi Group</dd></div>
+              <div><dt>Dibangun</dt><dd>Enggi Pool, sejak 2020</dd></div>
+              <div><dt>Basis</dt><dd>Tangerang, Banten</dd></div>
+              <div><dt>Pegangan</dt><dd><em>Discipline builds freedom.</em></dd></div>
+            </dl>
           </div>
         </div>
       </section>
 
-      <section class="services section" id="services">
-        <div class="container services__container">
-          <div class="services__intro"><p class="section__eyebrow">How I can help</p><h2 class="section__title">What I<br><span>offer.</span></h2><p>Dari hobi di atas meja hijau hingga ekspansi bisnis nyata, saya membawa Enggi Pool mendorong ekosistem biliar modern yang kompetitif dan berkelas.</p></div>
-          <div class="services__list">
-            <article class="service-item is-open">
-              <button class="service-item__toggle" type="button" aria-expanded="true"><span class="service-item__index">01</span><span class="service-item__title">Management</span><span class="service-item__icon" aria-hidden="true">−</span></button>
-              <div class="service-item__content"><p>Memimpin arah strategis dan ekspansi bisnis Enggi Group, sekaligus mengelola operasional Enggi Pool agar terus bertumbuh dan mendominasi pasar.</p><p class="service-item__skills">Strategic Leadership · Operasional Bisnis · Eksekusi Proyek · Team Direction</p></div>
+      <!-- 2. KERJA -->
+      <section class="section dark" id="kerja" aria-labelledby="kerja-title">
+        <div class="wrap">
+          <header class="section-head">
+            <p class="kicker" data-reveal><span class="ball" data-n="2" style="--c: var(--b2)"></span>Kerja</p>
+            <h2 class="display" id="kerja-title" data-reveal>Yang saya kerjakan<br> dengan serius.</h2>
+          </header>
+
+          <div class="roles">
+            <article class="role" data-reveal>
+              <p class="role__tag">Di meja rapat</p>
+              <h3 class="role__title">Memimpin Enggi Group</h3>
+              <p class="role__text">Menentukan arah strategis dan ekspansi Enggi Group, sekaligus menjaga operasional Enggi Pool supaya terus bertumbuh dan unggul di pasarnya.</p>
+              <ul class="role__list">
+                <li>Strategic leadership</li>
+                <li>Operasional bisnis</li>
+                <li>Eksekusi proyek</li>
+                <li>Team direction</li>
+              </ul>
             </article>
-            <article class="service-item">
-              <button class="service-item__toggle" type="button" aria-expanded="false"><span class="service-item__index">02</span><span class="service-item__title">Master Billiard</span><span class="service-item__icon" aria-hidden="true">+</span></button>
-              <div class="service-item__content" hidden><p>Perhitungan sudut matematis dengan akurasi setingkat mikrometer. Break mematikan, kontrol spin absolut, dan sapu bersih meja sebelum lawan sempat melangkah.</p><p class="service-item__skills">Akurasi Bedah · Spin Control Sempurna · Eksekusi Dingin · Penguasaan Meja Total</p></div>
+            <article class="role" data-reveal style="--d: 1">
+              <p class="role__tag">Di meja biliar</p>
+              <h3 class="role__title">Melatih &amp; sparring</h3>
+              <p class="role__text">Sudut, spin, dan posisi bola putih. Yang saya ajarkan bukan cuma cara memukul, tapi cara berpikir dua-tiga pukulan ke depan — seperti pemain pro.</p>
+              <ul class="role__list">
+                <li>Kontrol bola putih</li>
+                <li>Spin control</li>
+                <li>Strategi posisi</li>
+                <li>Mental bertanding</li>
+              </ul>
             </article>
           </div>
-        </div>
-      </section>
 
-      <section class="testimonials section" id="testimonials">
-        <div class="container">
-          <div class="section__heading"><div><p class="section__eyebrow">Kind words</p><h2 class="section__title">What they<br><span>say.</span></h2></div><p class="testimonial-score"><strong>5.0</strong><span>★★★★★<br>Client satisfaction</span></p></div>
-          <div class="testimonial-grid">
-            <blockquote class="testimonial-card"><span class="testimonial-card__stars">★★★★★</span><p>“Diajarin dasar kontrol bola putih sama Raihan cuma beberapa sesi, akurasi pukulan saya langsung naik drastis. Cara ngejelasin sudut dan tekniknya gampang banget dipahami.”</p><footer><img src="assets/img/testimonial-1.png" alt="" loading="lazy"><span><strong>Abex Wrooks</strong><small>Client</small></span></footer></blockquote>
-            <blockquote class="testimonial-card"><span class="testimonial-card__stars">★★★★★</span><p>“Dulu sering miss bola gampang, tapi setelah dilatih teknik grip dan fokus sama Raihan, konsistensi saya ningkat jauh. Sekarang jauh lebih percaya diri pas tanding.”</p><footer><img src="assets/img/testimonial-2.png" alt="" loading="lazy"><span><strong>Willer Morth</strong><small>Project partner</small></span></footer></blockquote>
-            <blockquote class="testimonial-card"><span class="testimonial-card__stars">★★★★★</span><p>“Bimbingan dari Raihan ngebuka cara pandang baru soal strategi meja. Bukan cuma diajarin cara mukul, tapi diajarin mikir 2-3 langkah ke depan layaknya pemain pro.”</p><footer><img src="assets/img/testimonial-3.png" alt="" loading="lazy"><span><strong>Llemi Llorens</strong><small>Client</small></span></footer></blockquote>
+          <div class="lab">
+            <div class="spin" data-spin data-reveal>
+              <div class="spin__intro">
+                <h3 class="spin__title">Coba sendiri: titik pukul.</h3>
+                <p>Geser titik kapur biru di bola putih. Diagram menunjukkan ke mana bola putih pergi setelah menyentuh bola sasaran.</p>
+              </div>
+
+              <div class="spin__grid">
+                <div class="spin__control">
+                  <svg class="spin__face" data-spin-face viewBox="-110 -110 220 220" tabindex="0" role="img" aria-label="Bola putih. Gunakan tombol panah untuk menggeser titik pukul." aria-describedby="spin-readout">
+                    <defs>
+                      <radialGradient id="cueShade" cx="38%" cy="30%" r="80%">
+                        <stop offset="0" stop-color="#fffaf0"/>
+                        <stop offset=".55" stop-color="#efe7d6"/>
+                        <stop offset="1" stop-color="#b9ad95"/>
+                      </radialGradient>
+                    </defs>
+                    <circle r="100" fill="url(#cueShade)"/>
+                    <circle class="spin__limit" r="62"/>
+                    <path class="spin__cross" d="M-100 0H100M0-100V100"/>
+                    <text class="spin__axis" x="0" y="-76">ATAS</text>
+                    <text class="spin__axis" x="0" y="83">BAWAH</text>
+                    <text class="spin__axis" x="-80" y="-6">KIRI</text>
+                    <text class="spin__axis" x="78" y="-6">KANAN</text>
+                    <circle class="spin__dot" data-spin-dot r="11" cx="0" cy="-31"/>
+                  </svg>
+                  <div class="spin__presets" role="group" aria-label="Contoh pukulan">
+                    <button type="button" data-preset="0,0">Stun</button>
+                    <button type="button" data-preset="0,0.75">Follow</button>
+                    <button type="button" data-preset="0,-0.85">Draw</button>
+                    <button type="button" data-preset="-0.7,0">English kiri</button>
+                    <button type="button" data-preset="0.7,0">English kanan</button>
+                  </div>
+                </div>
+
+                <div class="spin__view">
+                  <svg class="spin__diagram" data-spin-diagram viewBox="0 0 400 260" aria-hidden="true">
+                    <rect class="d-rail" width="400" height="260" rx="16"/>
+                    <rect class="d-cushion" x="9" y="9" width="382" height="242" rx="5"/>
+                    <rect class="d-felt" x="18" y="18" width="364" height="224"/>
+                    <g class="d-pockets">
+                      <circle cx="16" cy="16" r="12"/><circle cx="384" cy="16" r="12"/>
+                      <circle cx="16" cy="244" r="12"/><circle cx="384" cy="244" r="12"/>
+                      <circle cx="200" cy="12" r="11"/><circle cx="200" cy="248" r="11"/>
+                    </g>
+                    <line class="d-line d-line--cue" data-d-cue-line/>
+                    <line class="d-line d-line--obj" data-d-obj-line/>
+                    <path class="d-line d-line--post" data-d-post/>
+                    <circle class="d-ghost" data-d-ghost r="8"/>
+                    <circle class="d-start" data-d-start r="8"/>
+                    <circle class="d-ball d-ball--obj" data-d-obj r="8"/>
+                    <circle class="d-ball d-ball--cue" data-d-cue r="8"/>
+                  </svg>
+                  <p class="spin__readout" id="spin-readout" aria-live="polite"><strong data-spin-name>Follow</strong> <span data-spin-desc></span></p>
+                  <div class="spin__foot">
+                    <button class="btn btn--ghost btn--sm" type="button" data-spin-replay>Ulangi pukulan</button>
+                    <small>Ilustrasi sederhana. Di meja sungguhan, kecepatan dan kondisi kain ikut berpengaruh.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <figure class="reel" data-reel data-reveal style="--d: 1">
+              <div class="reel__frame">
+                <video class="reel__video" src="assets/video/portfolio.mp.mp4" poster="assets/img/opt/video-poster.webp" muted loop playsinline preload="none" width="480" height="864" aria-label="Rekaman Raihan melakukan pukulan di meja biliar"></video>
+                <div class="reel__controls">
+                  <button class="reel__btn" type="button" data-reel-play aria-label="Putar video">
+                    <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z" fill="currentColor"/></svg>
+                    <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>
+                  </button>
+                  <button class="reel__btn" type="button" data-reel-sound aria-pressed="false" aria-label="Nyalakan suara video">
+                    <svg class="i-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.2L12 5.6v12.8l-4.8-3.9H4z" fill="currentColor"/><path d="m16 9.5 5 5m0-5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    <svg class="i-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.2L12 5.6v12.8l-4.8-3.9H4z" fill="currentColor"/><path d="M15.5 8.6a4.6 4.6 0 0 1 0 6.8M18 6.2a8 8 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  </button>
+                </div>
+                <div class="reel__progress" aria-hidden="true"><span data-reel-progress></span></div>
+              </div>
+              <figcaption class="reel__caption"><strong>Rekaman di meja</strong><span>8 detik · satu pukulan</span></figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
-      <section class="contact section" id="contact">
-        <div class="container contact__container">
-          <div><p class="section__eyebrow">TERTARIK BERTANDING?</p><h2 class="section__title">Ayo Bertemu<br>di Meja <span>Billiard.</span></h2><p class="contact__description">Tertarik kolaborasi bisnis bersama Enggi Group atau mau sparring santai di Enggi Pool? Yuk, langsung booking sekarang.</p><a class="button" href="mailto:Raihanwinahyu@gmail.com">Hubungi Saya <span aria-hidden="true">↗</span></a></div>
-          <div class="contact__details">
-            <div><span class="contact__label">Email</span><a href="mailto:Raihanwinahyu@gmail.com">Raihanwinahyu@gmail.com</a><button class="copy-button" type="button" data-copy-email="Raihanwinahyu@gmail.com">Copy email</button></div>
-            <div><span class="contact__label">Location</span><p>Tangerang, Indonesia</p></div>
-            <div><span class="contact__label">Social media</span><div class="contact__social"><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://dribbble.com/" target="_blank" rel="noreferrer">Dribbble ↗</a></div></div>
+      <!-- 3. JEJAK -->
+      <section class="section paper" id="jejak" aria-labelledby="jejak-title">
+        <div class="wrap">
+          <header class="section-head section-head--split">
+            <div>
+              <p class="kicker" data-reveal><span class="ball" data-n="3" style="--c: var(--b3)"></span>Jejak</p>
+              <h2 class="display" id="jejak-title" data-reveal>Rekam jejak.</h2>
+            </div>
+            <div class="wire" role="tablist" aria-label="Jenis rekam jejak" data-reveal>
+              <button class="wire__tab" type="button" role="tab" id="tab-karier" aria-selected="true" aria-controls="panel-karier">Karier</button>
+              <button class="wire__tab" type="button" role="tab" id="tab-pendidikan" aria-selected="false" aria-controls="panel-pendidikan" tabindex="-1">Pendidikan</button>
+              <span class="wire__bead" aria-hidden="true"></span>
+            </div>
+          </header>
+
+          <div class="track" id="panel-karier" role="tabpanel" aria-labelledby="tab-karier" tabindex="0">
+            <ol class="track__list">
+              <li class="track__row">
+                <span class="track__year">2022 — sekarang</span>
+                <div class="track__main">
+                  <h3>Chief Executive Officer</h3>
+                  <p>Memimpin arah strategis dan ekspansi grup, termasuk pengembangan Enggi Pool.</p>
+                </div>
+                <span class="track__org">Enggi Group</span>
+              </li>
+              <li class="track__row">
+                <span class="track__year">2020 — 2022</span>
+                <div class="track__main">
+                  <h3>Founder &amp; Managing Director</h3>
+                  <p>Membangun dan menjalankan operasional venue, dari konsep sampai komunitas pemainnya.</p>
+                </div>
+                <span class="track__org">Enggi Pool</span>
+              </li>
+              <li class="track__row">
+                <span class="track__year">2020 — 2022</span>
+                <div class="track__main">
+                  <h3>Business Development &amp; Operations</h3>
+                  <p>Mendorong pertumbuhan usaha dan merapikan operasional harian.</p>
+                </div>
+                <span class="track__org">Murthado Company</span>
+              </li>
+            </ol>
           </div>
+
+          <div class="track" id="panel-pendidikan" role="tabpanel" aria-labelledby="tab-pendidikan" tabindex="0" hidden>
+            <ol class="track__list">
+              <li class="track__row">
+                <span class="track__year">2026</span>
+                <div class="track__main">
+                  <h3>SMA Yuppentek 1</h3>
+                  <p>Jurusan IPA, Tangerang.</p>
+                </div>
+                <span class="track__org">Sekolah menengah atas</span>
+              </li>
+              <li class="track__row">
+                <span class="track__year">2024</span>
+                <div class="track__main">
+                  <h3>SMP Al-Darul Mustafa</h3>
+                  <p>Lulus.</p>
+                </div>
+                <span class="track__org">Sekolah menengah pertama</span>
+              </li>
+              <li class="track__row">
+                <span class="track__year">2021</span>
+                <div class="track__main">
+                  <h3>SD Yayasan Enggi</h3>
+                  <p>Lulus.</p>
+                </div>
+                <span class="track__org">Sekolah dasar</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. HOBI -->
+      <section class="section dark" id="hobi" aria-labelledby="hobi-title">
+        <div class="wrap">
+          <header class="section-head section-head--split">
+            <div>
+              <p class="kicker" data-reveal><span class="ball" data-n="4" style="--c: var(--b4)"></span>Hobi</p>
+              <h2 class="display" id="hobi-title" data-reveal>Di luar<br> meja rapat.</h2>
+            </div>
+            <p class="section-head__aside" data-reveal>Lima hal yang menjaga kepala tetap dingin dan badan tetap jalan.</p>
+          </header>
+
+          <ol class="hobbies" data-hobbies>
+            <li class="hobby" data-reveal data-img="assets/img/opt/hobi-biliar.webp">
+              <span class="ball hobby__ball" data-n="1" style="--c: var(--b1)" aria-hidden="true"></span>
+              <h3 class="hobby__name">Biliar</h3>
+              <p class="hobby__tags">Cue sports · Komunitas · Strategi</p>
+              <img class="hobby__thumb" src="assets/img/opt/hobi-biliar.webp" width="500" height="333" alt="Meja biliar berkain merah dengan bola berserakan" loading="lazy" decoding="async">
+            </li>
+            <li class="hobby" data-reveal data-img="assets/img/opt/hobi-gym.webp">
+              <span class="ball hobby__ball" data-n="2" style="--c: var(--b2)" aria-hidden="true"></span>
+              <h3 class="hobby__name">Gym</h3>
+              <p class="hobby__tags">Strength training · Konsistensi · Progressive overload</p>
+              <img class="hobby__thumb" src="assets/img/opt/hobi-gym.webp" width="735" height="490" alt="Ruang gym gelap dengan barbel dan dumbel" loading="lazy" decoding="async">
+            </li>
+            <li class="hobby" data-reveal data-img="assets/img/opt/hobi-basket.webp">
+              <span class="ball hobby__ball" data-n="3" style="--c: var(--b3)" aria-hidden="true"></span>
+              <h3 class="hobby__name">Basket</h3>
+              <p class="hobby__tags">Teamplay · Cardio · Agility</p>
+              <img class="hobby__thumb" src="assets/img/opt/hobi-basket.webp" width="736" height="490" alt="Bola basket di lantai kayu lapangan indoor" loading="lazy" decoding="async">
+            </li>
+            <li class="hobby" data-reveal data-img="assets/img/opt/hobi-tinju.webp">
+              <span class="ball hobby__ball" data-n="4" style="--c: var(--b4)" aria-hidden="true"></span>
+              <h3 class="hobby__name">Tinju</h3>
+              <p class="hobby__tags">Disiplin · Grit · Mental baja</p>
+              <img class="hobby__thumb" src="assets/img/opt/hobi-tinju.webp" width="736" height="556" alt="Dua petinju bertanding di atas ring" loading="lazy" decoding="async">
+            </li>
+            <li class="hobby" data-reveal data-img="assets/img/opt/hobi-mendaki.webp">
+              <span class="ball hobby__ball" data-n="5" style="--c: var(--b5)" aria-hidden="true"></span>
+              <h3 class="hobby__name">Mendaki</h3>
+              <p class="hobby__tags">Endurance · Alam · Eksplorasi</p>
+              <img class="hobby__thumb" src="assets/img/opt/hobi-mendaki.webp" width="735" height="490" alt="Siluet pendaki berjalan di punggung gunung saat matahari terbenam" loading="lazy" decoding="async">
+            </li>
+          </ol>
+          <div class="hobby-float" data-hobby-float aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <!-- GYM — progressive overload -->
+      <section class="section dark gym" id="gym" aria-labelledby="gym-title">
+        <div class="wrap gym__grid">
+          <div class="gym__text">
+            <p class="kicker" data-reveal>Pegangan nomor dua</p>
+            <h2 class="display display--xl" id="gym-title" data-reveal>Better than yesterday.</h2>
+            <p class="gym__lede" data-reveal style="--d: 1">Progressive overload versi hidup: tambah sedikit, terus-menerus. Di gym bentuknya beban, di kantor bentuknya standar kerja. Silakan isi barbelnya.</p>
+          </div>
+
+          <div class="barbell" data-barbell data-reveal style="--d: 1">
+            <div class="barbell__head">
+              <p class="barbell__total"><output data-bb-total aria-live="off">20</output><span>kg</span></p>
+              <p class="barbell__msg" data-bb-msg aria-live="polite">Bar kosong. Semua mulai dari sini.</p>
+            </div>
+            <svg class="barbell__svg" data-bb-svg viewBox="0 0 800 300" role="img" aria-label="Barbel dengan piringan yang bisa ditambah">
+              <line class="bb-floor" x1="0" y1="292" x2="800" y2="292"/>
+              <polyline class="bb-shaft" data-bb-shaft/>
+              <polyline class="bb-sleeve" data-bb-sleeve-l/>
+              <polyline class="bb-sleeve" data-bb-sleeve-r/>
+              <g data-bb-plates></g>
+              <g data-bb-collars></g>
+            </svg>
+            <div class="barbell__plates" role="group" aria-label="Tambah sepasang piringan">
+              <button type="button" class="plate-btn" data-plate="25" style="--c: #c8302b" aria-label="Tambah sepasang piringan 25 kilogram"><i></i>25</button>
+              <button type="button" class="plate-btn" data-plate="20" style="--c: #1f4fb4" aria-label="Tambah sepasang piringan 20 kilogram"><i></i>20</button>
+              <button type="button" class="plate-btn" data-plate="15" style="--c: #e2b021" aria-label="Tambah sepasang piringan 15 kilogram"><i></i>15</button>
+              <button type="button" class="plate-btn" data-plate="10" style="--c: #1b7f4a" aria-label="Tambah sepasang piringan 10 kilogram"><i></i>10</button>
+              <button type="button" class="plate-btn" data-plate="5" style="--c: #ece5d4" aria-label="Tambah sepasang piringan 5 kilogram"><i></i>5</button>
+              <button type="button" class="plate-btn" data-plate="2.5" style="--c: #3a3631" aria-label="Tambah sepasang piringan 2,5 kilogram"><i></i>2,5</button>
+            </div>
+            <div class="barbell__actions">
+              <button type="button" class="link-btn" data-bb-undo>Lepas sepasang</button>
+              <button type="button" class="link-btn" data-bb-clear>Kosongkan</button>
+              <span class="barbell__note">Warna piringan standar kompetisi</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONI -->
+      <section class="section paper" id="kata" aria-labelledby="kata-title">
+        <div class="wrap quotes" data-quotes>
+          <div class="quotes__side">
+            <p class="kicker" data-reveal>Kata mereka</p>
+            <h2 class="quotes__title" id="kata-title" data-reveal>Dari yang pernah satu meja.</h2>
+            <div class="quotes__nav" role="tablist" aria-label="Pilih testimoni" data-reveal>
+              <button type="button" role="tab" class="quotes__btn" aria-selected="true" aria-controls="q1" id="qt1"><span class="ball" data-n="1" style="--c: var(--b1)"></span><span class="quotes__bar"></span></button>
+              <button type="button" role="tab" class="quotes__btn" aria-selected="false" aria-controls="q2" id="qt2" tabindex="-1"><span class="ball" data-n="2" style="--c: var(--b2)"></span><span class="quotes__bar"></span></button>
+              <button type="button" role="tab" class="quotes__btn" aria-selected="false" aria-controls="q3" id="qt3" tabindex="-1"><span class="ball" data-n="3" style="--c: var(--b3)"></span><span class="quotes__bar"></span></button>
+            </div>
+          </div>
+          <div class="quotes__stage" data-reveal style="--d: 1">
+            <figure class="quote is-active" id="q1" role="tabpanel" aria-labelledby="qt1">
+              <blockquote><p>“Diajarin dasar kontrol bola putih sama Raihan cuma beberapa sesi, akurasi pukulan saya langsung naik drastis. Cara ngejelasin sudut dan tekniknya gampang banget dipahami.”</p></blockquote>
+              <figcaption><span class="avatar" aria-hidden="true">AW</span><span><strong>Abex Wrooks</strong><small>Klien</small></span></figcaption>
+            </figure>
+            <figure class="quote" id="q2" role="tabpanel" aria-labelledby="qt2" hidden>
+              <blockquote><p>“Dulu sering miss bola gampang, tapi setelah dilatih teknik grip dan fokus sama Raihan, konsistensi saya ningkat jauh. Sekarang jauh lebih percaya diri pas tanding.”</p></blockquote>
+              <figcaption><span class="avatar" aria-hidden="true">WM</span><span><strong>Willer Morth</strong><small>Partner proyek</small></span></figcaption>
+            </figure>
+            <figure class="quote" id="q3" role="tabpanel" aria-labelledby="qt3" hidden>
+              <blockquote><p>“Bimbingan dari Raihan ngebuka cara pandang baru soal strategi meja. Bukan cuma diajarin cara mukul, tapi diajarin mikir 2–3 langkah ke depan layaknya pemain pro.”</p></blockquote>
+              <figcaption><span class="avatar" aria-hidden="true">LL</span><span><strong>Llemi Llorens</strong><small>Klien</small></span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. KONTAK -->
+      <section class="section felt contact" id="kontak" aria-labelledby="kontak-title">
+        <div class="wrap">
+          <p class="kicker" data-reveal><span class="ball" data-n="5" style="--c: var(--b5)"></span>Kontak</p>
+          <div class="contact__head">
+            <h2 class="display display--xxl" id="kontak-title" data-reveal>Giliran kamu.</h2>
+            <p class="contact__lede" data-reveal style="--d: 1">Mau kolaborasi bisnis bareng Enggi Group, atau sparring santai di Enggi Pool? Pilih jalurnya.</p>
+          </div>
+
+          <div class="paths">
+            <a class="path" data-reveal href="mailto:raihanwinahyu@gmail.com?subject=Kolaborasi%20dengan%20Enggi%20Group">
+              <span class="path__label">Kolaborasi bisnis · Email</span>
+              <span class="path__value">raihanwinahyu<wbr>@gmail.com</span>
+              <span class="path__pocket" aria-hidden="true"></span>
+            </a>
+            <a class="path" data-reveal style="--d: 1" href="https://wa.me/6289631009851?text=Halo%20Raihan%2C%20saya%20mau%20sparring%20di%20Enggi%20Pool." target="_blank" rel="noopener">
+              <span class="path__label">Sparring &amp; main di Enggi Pool · WhatsApp</span>
+              <span class="path__value">Chat sekarang</span>
+              <span class="path__pocket" aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <ul class="contact__meta" data-reveal>
+            <li><button class="link-btn" type="button" data-copy="raihanwinahyu@gmail.com">Salin email</button></li>
+            <li><a href="https://www.linkedin.com/in/raihanwinahyu" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="assets/pdf/Raihan%20CV.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+            <li><span>Tangerang, Banten</span></li>
+          </ul>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container footer__container"><a class="nav__logo" href="#home">Raihan<span>.</span></a><p>All rights reserved © <span data-current-year>2025</span> Raihan Winahyu</p><a class="footer__top" href="#home">Back to top ↑</a></div>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p class="site-footer__motto" aria-label="Discipline builds freedom.">Discipline builds <em>freedom.</em></p>
+        <div class="site-footer__row">
+          <span>© <span data-year>2026</span> Raihan Winahyu · Enggi Group</span>
+          <a href="#top">Kembali ke meja ↑</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
