@@ -415,50 +415,72 @@
     const root = $("[data-reel]");
     if (!root) return;
     const video = $("video", root);
+    const source = $("source", video);
     const playBtn = $("[data-reel-play]", root);
+    const bigBtn = $("[data-reel-big]", root);
     const soundBtn = $("[data-reel-sound]", root);
     const bar = $("[data-reel-progress]", root);
+    const errorEl = $("[data-reel-error]", root);
     let userPaused = false;
     let inView = false;
 
+    // Phones can refuse *autoplay* (iOS Low Power Mode, Android data saver), but they
+    // always allow play() called directly inside a tap. So autoplay is a bonus; the
+    // big play button is the guaranteed path.
     const sync = () => {
       const playing = !video.paused && !video.ended;
       root.classList.toggle("is-playing", playing);
       playBtn.setAttribute("aria-label", playing ? "Jeda video" : "Putar video");
     };
-    const tryPlay = () => {
-      if (video.preload === "none") video.preload = "auto";
+    const fail = () => {
+      root.classList.add("is-error");
+      if (errorEl) errorEl.hidden = false;
+      sync();
+    };
+    const play = (fromTap) => {
+      if (root.classList.contains("is-error")) return;
+      if (fromTap) userPaused = false;
       const p = video.play();
-      if (p && p.catch) p.catch(() => sync());
+      if (p && p.catch) {
+        p.catch((err) => {
+          sync();
+          // a tap that still fails means the file itself can't play here
+          if (fromTap && err && err.name !== "AbortError") fail();
+        });
+      }
+    };
+    const toggle = () => {
+      if (video.paused || video.ended) play(true);
+      else { userPaused = true; video.pause(); }
     };
 
-    video.addEventListener("play", sync);
-    video.addEventListener("pause", sync);
+    ["play", "playing", "pause", "ended"].forEach((ev) => video.addEventListener(ev, sync));
     video.addEventListener("timeupdate", () => {
       if (video.duration) bar.style.transform = `scaleX(${video.currentTime / video.duration})`;
     });
-    playBtn.addEventListener("click", () => {
-      if (video.paused) { userPaused = false; tryPlay(); }
-      else { userPaused = true; video.pause(); }
-    });
-    video.addEventListener("click", () => playBtn.click());
+    if (source) source.addEventListener("error", fail);
+    video.addEventListener("error", fail);
+
+    playBtn.addEventListener("click", toggle);
+    if (bigBtn) bigBtn.addEventListener("click", toggle);
+    video.addEventListener("click", toggle);
     soundBtn.addEventListener("click", () => {
       video.muted = !video.muted;
       soundBtn.setAttribute("aria-pressed", String(!video.muted));
       soundBtn.setAttribute("aria-label", video.muted ? "Nyalakan suara video" : "Matikan suara video");
-      if (!video.muted && video.paused) { userPaused = false; tryPlay(); }
+      if (!video.muted && video.paused) play(true);
     });
 
     if ("IntersectionObserver" in window) {
       new IntersectionObserver(([entry]) => {
         inView = entry.isIntersecting;
-        if (inView && !userPaused && !reduced()) tryPlay();
+        if (inView && !userPaused && !reduced()) play(false);
         else if (!inView && !video.paused) video.pause();
       }, { threshold: 0.45 }).observe(root);
     }
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) video.pause();
-      else if (inView && !userPaused && !reduced()) tryPlay();
+      else if (inView && !userPaused && !reduced()) play(false);
     });
     sync();
   })();
@@ -535,6 +557,7 @@
       img.alt = "";
       img.decoding = "async";
       img.dataset.src = row.dataset.img;
+      if (row.dataset.pos) img.style.objectPosition = row.dataset.pos;
       float.appendChild(img);
       return img;
     });

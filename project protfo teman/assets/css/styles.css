@@ -1080,6 +1080,42 @@ em { font-style: italic; }
   backdrop-filter: blur(8px);
 }
 .reel__btn svg { width: 18px; height: 18px; }
+.reel__big {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  padding: 0 0 0 4px;
+  border: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background:
+    radial-gradient(circle at 36% 28%, #fff 0 6%, rgba(255, 255, 255, 0) 34%),
+    radial-gradient(circle at 46% 42%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.3) 100%),
+    var(--ball-ivory);
+  color: var(--ink);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.25s, transform 0.25s var(--ease-out);
+}
+.reel__big svg { width: 30px; height: 30px; }
+.reel.is-playing .reel__big,
+.reel.is-error .reel__big { opacity: 0; pointer-events: none; transform: translate(-50%, -50%) scale(0.8); }
+.reel__error {
+  position: absolute;
+  inset: auto 14px 64px;
+  z-index: 2;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  background: rgba(17, 14, 11, 0.85);
+  color: var(--ivory);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+.reel__error a { color: var(--chalk); font-weight: 600; }
 .reel:not(.is-playing) .i-pause,
 .reel.is-playing .i-play { display: none; }
 .reel__btn[aria-pressed="false"] .i-sound,
@@ -1267,7 +1303,7 @@ em { font-style: italic; }
     grid-row: 1 / span 2;
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1;
     object-fit: cover;
     border-radius: 6px;
   }
@@ -1281,8 +1317,8 @@ em { font-style: italic; }
   left: 0;
   top: 0;
   z-index: 30;
-  width: clamp(260px, 25vw, 380px);
-  aspect-ratio: 4 / 3;
+  width: clamp(230px, 21vw, 320px);
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 8px;
   pointer-events: none;
@@ -1664,4 +1700,16 @@ em { font-style: italic; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Bonus row in Hobi: a joke caption, set smaller and in the serif italic */
+.hobby--bonus .hobby__name {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2rem, 1rem + 3.4vw, 4.25rem);
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  color: var(--chalk);
 }

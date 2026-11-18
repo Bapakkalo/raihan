@@ -243,7 +243,13 @@
 
             <figure class="reel" data-reel data-reveal style="--d: 1">
               <div class="reel__frame">
-                <video class="reel__video" src="assets/video/portfolio.mp.mp4" poster="assets/img/opt/video-poster.webp" muted loop playsinline preload="none" width="480" height="864" aria-label="Rekaman Raihan melakukan pukulan di meja biliar"></video>
+                <video class="reel__video" poster="assets/img/opt/video-poster.webp" muted loop playsinline webkit-playsinline preload="metadata" width="480" height="864" aria-label="Rekaman Raihan melakukan pukulan di meja biliar">
+                  <source src="assets/video/portfolio.mp.mp4" type="video/mp4">
+                </video>
+                <button class="reel__big" type="button" data-reel-big aria-label="Putar video">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z" fill="currentColor"/></svg>
+                </button>
+                <p class="reel__error" data-reel-error hidden>Video tidak bisa dimuat di sini. <a href="assets/video/portfolio.mp.mp4" target="_blank" rel="noopener">Buka videonya langsung</a>.</p>
                 <div class="reel__controls">
                   <button class="reel__btn" type="button" data-reel-play aria-label="Putar video">
                     <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z" fill="currentColor"/></svg>
@@ -355,29 +361,35 @@
               <p class="hobby__tags">Cue sports · Komunitas · Strategi</p>
               <img class="hobby__thumb" src="assets/img/opt/hobi-biliar.webp" width="500" height="333" alt="Meja biliar berkain merah dengan bola berserakan" loading="lazy" decoding="async">
             </li>
-            <li class="hobby" data-reveal data-img="assets/img/opt/hobi-gym.webp">
+            <li class="hobby" data-reveal data-img="assets/img/opt/hobi-gym.webp" data-pos="50% 30%">
               <span class="ball hobby__ball" data-n="2" style="--c: var(--b2)" aria-hidden="true"></span>
               <h3 class="hobby__name">Gym</h3>
               <p class="hobby__tags">Strength training · Konsistensi · Progressive overload</p>
-              <img class="hobby__thumb" src="assets/img/opt/hobi-gym.webp" width="735" height="490" alt="Ruang gym gelap dengan barbel dan dumbel" loading="lazy" decoding="async">
+              <img class="hobby__thumb" src="assets/img/opt/hobi-gym.webp" width="685" height="900" alt="Raihan berfoto di cermin gym dengan kaus tanpa lengan" style="object-position: 50% 30%" loading="lazy" decoding="async">
             </li>
-            <li class="hobby" data-reveal data-img="assets/img/opt/hobi-basket.webp">
+            <li class="hobby" data-reveal data-img="assets/img/opt/hobi-basket.webp" data-pos="48% 35%">
               <span class="ball hobby__ball" data-n="3" style="--c: var(--b3)" aria-hidden="true"></span>
               <h3 class="hobby__name">Basket</h3>
               <p class="hobby__tags">Teamplay · Cardio · Agility</p>
-              <img class="hobby__thumb" src="assets/img/opt/hobi-basket.webp" width="736" height="490" alt="Bola basket di lantai kayu lapangan indoor" loading="lazy" decoding="async">
+              <img class="hobby__thumb" src="assets/img/opt/hobi-basket.webp" width="900" height="834" alt="Raihan memakai jersey basket Chicago Bulls" style="object-position: 48% 35%" loading="lazy" decoding="async">
             </li>
-            <li class="hobby" data-reveal data-img="assets/img/opt/hobi-tinju.webp">
+            <li class="hobby" data-reveal data-img="assets/img/opt/hobi-tinju.webp" data-pos="50% 28%">
               <span class="ball hobby__ball" data-n="4" style="--c: var(--b4)" aria-hidden="true"></span>
               <h3 class="hobby__name">Tinju</h3>
               <p class="hobby__tags">Disiplin · Grit · Mental baja</p>
-              <img class="hobby__thumb" src="assets/img/opt/hobi-tinju.webp" width="736" height="556" alt="Dua petinju bertanding di atas ring" loading="lazy" decoding="async">
+              <img class="hobby__thumb" src="assets/img/opt/hobi-tinju.webp" width="685" height="900" alt="Raihan berpose dengan hand wrap merah di ring tinju" style="object-position: 50% 28%" loading="lazy" decoding="async">
             </li>
-            <li class="hobby" data-reveal data-img="assets/img/opt/hobi-mendaki.webp">
+            <li class="hobby" data-reveal data-img="assets/img/opt/hobi-mendaki.webp" data-pos="52% 45%">
               <span class="ball hobby__ball" data-n="5" style="--c: var(--b5)" aria-hidden="true"></span>
               <h3 class="hobby__name">Mendaki</h3>
-              <p class="hobby__tags">Endurance · Alam · Eksplorasi</p>
-              <img class="hobby__thumb" src="assets/img/opt/hobi-mendaki.webp" width="735" height="490" alt="Siluet pendaki berjalan di punggung gunung saat matahari terbenam" loading="lazy" decoding="async">
+              <p class="hobby__tags">Puncak Gunung Sumbing, 3.371&nbsp;mdpl · Endurance · Alam</p>
+              <img class="hobby__thumb" src="assets/img/opt/hobi-mendaki.webp" width="900" height="744" alt="Raihan di puncak Gunung Sumbing memegang papan 3.371 mdpl" style="object-position: 52% 45%" loading="lazy" decoding="async">
+            </li>
+            <li class="hobby hobby--bonus" data-reveal data-img="assets/img/opt/hobi-perosotan.webp" data-pos="50% 30%">
+              <span class="ball hobby__ball" data-n="6" style="--c: var(--b6)" aria-hidden="true"></span>
+              <h3 class="hobby__name">Masa kecil kurang bahagia.</h3>
+              <p class="hobby__tags">Bonus · Jeda di antara dua rack</p>
+              <img class="hobby__thumb" src="assets/img/opt/hobi-perosotan.webp" width="649" height="900" alt="Raihan main perosotan anak-anak di samping meja biliar" style="object-position: 50% 30%" loading="lazy" decoding="async">
             </li>
           </ol>
           <div class="hobby-float" data-hobby-float aria-hidden="true"></div>
