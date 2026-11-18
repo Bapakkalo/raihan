@@ -31,6 +31,11 @@
     <script src="assets/js/core.js" defer></script>
     <script src="assets/js/table.js" defer></script>
     <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/ring-data.js" defer></script>
+    <script src="assets/js/ring-scene.js" defer></script>
+    <script src="assets/js/ring-boxer.js" defer></script>
+    <script src="assets/js/ring-sim.js" defer></script>
+    <script src="assets/js/ring.js" defer></script>
   </head>
   <body>
     <a class="skip" href="#profil">Langsung ke konten</a>
@@ -48,6 +53,7 @@
             <li><a href="#kerja"><i class="dot" style="--c: var(--b2)"></i>Kerja</a></li>
             <li><a href="#jejak"><i class="dot" style="--c: var(--b3)"></i>Jejak</a></li>
             <li><a href="#hobi"><i class="dot" style="--c: var(--b4)"></i>Hobi</a></li>
+            <li><a href="#ring"><i class="dot dot--eight" style="--c: var(--b8)"></i>Ring</a></li>
             <li><a href="#kontak"><i class="dot" style="--c: var(--b5)"></i>Kontak</a></li>
           </ul>
         </nav>
@@ -376,7 +382,7 @@
             <li class="hobby" data-reveal data-img="assets/img/opt/hobi-tinju.webp" data-pos="50% 28%">
               <span class="ball hobby__ball" data-n="4" style="--c: var(--b4)" aria-hidden="true"></span>
               <h3 class="hobby__name">Tinju</h3>
-              <p class="hobby__tags">Disiplin · Grit · Mental baja</p>
+              <p class="hobby__tags">Disiplin · Grit · Mental baja · <a class="hobby__link" href="#ring">Coba sparring ↓</a></p>
               <img class="hobby__thumb" src="assets/img/opt/hobi-tinju.webp" width="685" height="900" alt="Raihan berpose dengan hand wrap merah di ring tinju" style="object-position: 50% 28%" loading="lazy" decoding="async">
             </li>
             <li class="hobby" data-reveal data-img="assets/img/opt/hobi-mendaki.webp" data-pos="52% 45%">
@@ -432,6 +438,137 @@
               <span class="barbell__note">Warna piringan standar kompetisi</span>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- RING — a three-round boxing game -->
+      <section class="section dark ring-sec" id="ring" aria-labelledby="ring-title">
+        <div class="wrap">
+          <header class="section-head section-head--split">
+            <div>
+              <p class="kicker" data-reveal><span class="ball" data-n="8" style="--c: var(--b8)"></span>Ring</p>
+              <h2 class="display" id="ring-title" data-reveal>Naik ring.<br> Tiga ronde.</h2>
+            </div>
+            <p class="section-head__aside" data-reveal>Tinju salah satu hobi Raihan. Pemanasan dulu dengan dua lawan dari sasana, lalu sparring dengan Raihan sendiri.</p>
+          </header>
+
+          <div class="ring" data-ring>
+            <div class="ring__stage" data-ring-stage tabindex="-1" role="application" aria-roledescription="game tinju" aria-label="Game tinju tiga ronde" aria-describedby="ring-keys">
+              <canvas class="ring__canvas" data-ring-canvas aria-hidden="true"></canvas>
+
+              <div class="ring__hud" data-ring-hud hidden>
+                <div class="hud__side hud__side--p">
+                  <p class="hud__name">Kamu</p>
+                  <div class="hud__bar hud__bar--hp"><i data-hud="p-lag"></i><b data-hud="p-hp"></b></div>
+                  <div class="hud__row">
+                    <div class="hud__bar hud__bar--sta" title="Stamina"><b data-hud="p-sta"></b></div>
+                    <div class="hud__meter" data-hud="meter" title="Pukulan Bola 8"><span class="hud__eight" aria-hidden="true">8</span><div class="hud__bar hud__bar--spirit"><b data-hud="p-spirit"></b></div></div>
+                  </div>
+                </div>
+                <div class="hud__clock" aria-hidden="true"><span data-hud="round">R1</span><strong data-hud="clock">1:00</strong></div>
+                <div class="hud__side hud__side--o">
+                  <p class="hud__name" data-hud="o-name">Joko</p>
+                  <div class="hud__bar hud__bar--hp"><i data-hud="o-lag"></i><b data-hud="o-hp"></b></div>
+                  <p class="hud__kd" data-hud="o-kd" aria-hidden="true"></p>
+                </div>
+              </div>
+
+              <p class="ring__call" data-ring-call aria-live="polite"></p>
+              <p class="ring__bubble" data-ring-bubble aria-hidden="true" hidden></p>
+              <p class="ring__hint" data-ring-hint aria-live="polite" hidden></p>
+              <div class="ring__count" data-ring-count hidden>
+                <strong data-count-n></strong>
+                <div class="ring__mash" data-count-mash hidden>
+                  <p>Tekan tombol pukul berulang-ulang untuk bangun!</p>
+                  <div class="hud__bar"><b data-count-bar></b></div>
+                </div>
+              </div>
+
+              <!-- before the fight: the card -->
+              <div class="ring__screen ring__select" data-ring-screen="select">
+                <div class="ring__card">
+                  <p class="ring__label">Kartu tanding</p>
+                  <div class="foes" role="radiogroup" aria-label="Pilih lawan sparring" data-foes></div>
+                  <p class="ring__blurb" data-ring-blurb></p>
+                </div>
+                <div class="ring__go">
+                  <button class="btn ring__start" type="button" data-ring-start>Naik ring <span aria-hidden="true">→</span></button>
+                  <p class="ring__keys" id="ring-keys"><span class="ring__keys-kb"><kbd>←</kbd><kbd>→</kbd> menghindar · <kbd>↓</kbd> blok · <kbd>J</kbd> jab · <kbd>K</kbd> straight · <kbd>U</kbd> hook · <kbd>I</kbd> uppercut · <kbd>Spasi</kbd> Bola 8</span><span class="ring__keys-touch">Tombol muncul di layar saat bertanding. Paling enak dimainkan dengan dua jempol.</span></p>
+                </div>
+              </div>
+
+              <!-- between rounds -->
+              <div class="ring__screen ring__panel" data-ring-screen="corner" hidden>
+                <div class="panel" role="dialog" aria-modal="true" aria-labelledby="corner-title">
+                  <p class="ring__label" data-corner-kicker>Sudut ring</p>
+                  <h3 class="panel__title" id="corner-title" data-corner-title>Akhir ronde 1</h3>
+                  <dl class="tally" data-corner-tally></dl>
+                  <p class="panel__tip"><span>Kata pelatih</span><em data-corner-tip></em></p>
+                  <button class="btn" type="button" data-corner-next>Lanjut ronde 2</button>
+                </div>
+              </div>
+
+              <!-- after the fight -->
+              <div class="ring__screen ring__panel" data-ring-screen="result" hidden>
+                <div class="panel panel--result" role="dialog" aria-modal="true" aria-labelledby="result-title">
+                  <p class="ring__label" data-result-kicker>Hasil</p>
+                  <h3 class="panel__title panel__title--big" id="result-title" data-result-title>Menang KO</h3>
+                  <p class="panel__line" data-result-line></p>
+                  <div class="judges" data-result-judges hidden></div>
+                  <dl class="tally" data-result-tally></dl>
+                  <div class="panel__actions">
+                    <button class="btn" type="button" data-result-next hidden>Lawan berikutnya <span aria-hidden="true">→</span></button>
+                    <button class="btn btn--ghost" type="button" data-result-again>Tanding ulang</button>
+                    <button class="link-btn" type="button" data-result-exit>Keluar dari ring</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- paused -->
+              <div class="ring__screen ring__panel" data-ring-screen="pause" hidden>
+                <div class="panel" role="dialog" aria-modal="true" aria-labelledby="pause-title">
+                  <h3 class="panel__title" id="pause-title">Jeda</h3>
+                  <ul class="panel__keys">
+                    <li><span>Menghindar</span><span><kbd>←</kbd> <kbd>→</kbd> atau <kbd>A</kbd> <kbd>D</kbd></span></li>
+                    <li><span>Blok (tahan)</span><span><kbd>↓</kbd> atau <kbd>S</kbd></span></li>
+                    <li><span>Jab · Straight</span><span><kbd>J</kbd> <kbd>K</kbd></span></li>
+                    <li><span>Hook · Uppercut</span><span><kbd>U</kbd> <kbd>I</kbd></span></li>
+                    <li><span>Pukulan Bola 8</span><span><kbd>Spasi</kbd></span></li>
+                  </ul>
+                  <div class="panel__actions">
+                    <button class="btn" type="button" data-pause-resume>Lanjut</button>
+                    <button class="btn btn--ghost" type="button" data-pause-restart>Ulang dari awal</button>
+                    <button class="link-btn" type="button" data-pause-exit>Keluar dari ring</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ring__pad" data-ring-pad hidden>
+                <div class="pad pad--def">
+                  <button class="pad__btn pad__btn--dodge" type="button" data-act="dodgeL" aria-label="Menghindar ke kiri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                  <button class="pad__btn pad__btn--block" type="button" data-act="block" aria-label="Blok, tahan">Blok</button>
+                  <button class="pad__btn pad__btn--dodge" type="button" data-act="dodgeR" aria-label="Menghindar ke kanan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                </div>
+                <div class="pad pad--off">
+                  <button class="pad__btn pad__btn--special" type="button" data-act="special" aria-label="Pukulan Bola 8"><span>8</span></button>
+                  <button class="pad__btn pad__btn--power" type="button" data-act="hook">Hook</button>
+                  <button class="pad__btn pad__btn--power" type="button" data-act="upper">Upper</button>
+                  <button class="pad__btn" type="button" data-act="jab">Jab</button>
+                  <button class="pad__btn" type="button" data-act="straight">Straight</button>
+                </div>
+              </div>
+
+              <div class="ring__tools" data-ring-tools hidden>
+                <button class="ring__tool" type="button" data-ring-sound aria-pressed="true" aria-label="Suara efek">
+                  <svg class="i-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.2L12 5.6v12.8l-4.8-3.9H4z" fill="currentColor"/><path d="M15.5 8.6a4.6 4.6 0 0 1 0 6.8M18 6.2a8 8 0 0 1 0 11.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  <svg class="i-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.2L12 5.6v12.8l-4.8-3.9H4z" fill="currentColor"/><path d="m16 9.5 5 5m0-5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </button>
+                <button class="ring__tool" type="button" data-ring-pause aria-label="Jeda"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg></button>
+                <button class="ring__tool" type="button" data-ring-exit aria-label="Keluar dari ring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+              </div>
+            </div>
+          </div>
+          <p class="ring__note" data-reveal>Lawan dan rekornya fiktif, kecuali Raihan. Rekor menangmu disimpan di browser ini saja.</p>
         </div>
       </section>
 

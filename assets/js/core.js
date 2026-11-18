@@ -93,6 +93,28 @@
     src.stop(t + decay + 0.02);
   }
 
+  /* filtered noise whose filter glides; loops the buffer so it can run long */
+  function sweep(peak, attack, decay, { type = "bandpass", from = 800, to = 800, q = 1, delay = 0 } = {}) {
+    const ctx = ensureContext();
+    if (!ctx || peak <= 0.001 || !voice(attack + decay + delay)) return;
+    const t = ctx.currentTime + delay;
+    const src = ctx.createBufferSource();
+    src.buffer = noiseBuffer;
+    src.loop = true;
+    const filter = ctx.createBiquadFilter();
+    filter.type = type;
+    filter.Q.value = q;
+    filter.frequency.setValueAtTime(from, t);
+    filter.frequency.exponentialRampToValueAtTime(Math.max(20, to), t + attack + decay);
+    const gain = ctx.createGain();
+    gain.gain.setValueAtTime(0.0001, t);
+    gain.gain.exponentialRampToValueAtTime(peak, t + attack);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + attack + decay);
+    src.connect(filter).connect(gain).connect(master);
+    src.start(t, Math.random() * 0.3);
+    src.stop(t + attack + decay + 0.03);
+  }
+
   const v01 = (v) => RW.clamp(v, 0, 1);
 
   RW.sfx = {
@@ -139,6 +161,47 @@
     /** soft UI tick */
     tick(v = 0.4) {
       tone(1900, 0.12 * v01(v), 0.025, { type: "triangle" });
+    },
+    /** glove landing: low thump plus a leather slap (sharper on the head) */
+    punch(v, head = true) {
+      v = v01(v);
+      tone(head ? 125 : 86, 0.55 * v, head ? 0.11 : 0.16, { glideTo: head ? 68 : 46 });
+      burst(0.36 * v, 0.05, "lowpass", head ? 2600 : 1300, 0.9);
+      burst(0.22 * v, 0.018, "highpass", 3200, 0.7);
+    },
+    /** glove meeting a raised guard */
+    pat(v) {
+      v = v01(v);
+      tone(220, 0.2 * v, 0.05, { glideTo: 150 });
+      burst(0.26 * v, 0.035, "bandpass", 950, 1.1);
+    },
+    /** a punch that only finds air */
+    whoosh(v) {
+      sweep(0.17 * v01(v), 0.05, 0.13, { from: 480, to: 2600, q: 1.6 });
+    },
+    /** short exhale before a punch: a telegraph you can hear */
+    breath(v) {
+      sweep(0.06 * v01(v), 0.02, 0.1, { type: "highpass", from: 1700, to: 2600, q: 0.6 });
+    },
+    /** the ring bell, struck n times */
+    bell(n = 1) {
+      for (let i = 0; i < n; i++) {
+        const d = i * 0.32;
+        [1180, 2650, 3790, 5120].forEach((f, j) => tone(f, 0.15 / (j + 1), 1.3 - j * 0.22, { delay: d }));
+        burst(0.08, 0.02, "highpass", 4000, 0.7, d);
+      }
+    },
+    /** the crowd rising and settling */
+    crowd(v, len = 1.4) {
+      v = v01(v);
+      sweep(0.12 * v, 0.25, len, { type: "lowpass", from: 950, to: 480, q: 0.5 });
+      sweep(0.05 * v, 0.2, len * 0.8, { type: "bandpass", from: 1700, to: 1100, q: 0.8 });
+    },
+    /** the referee's count */
+    count(v = 0.6) {
+      v = v01(v);
+      tone(420, 0.22 * v, 0.07, { type: "triangle", glideTo: 300 });
+      burst(0.12 * v, 0.02, "highpass", 2500, 0.7);
     },
   };
 
